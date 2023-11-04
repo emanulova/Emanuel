@@ -1,0 +1,38 @@
+var piedra = "1"
+var papel = "2"
+var tijera = "3"
+
+var juego = prompt("Ingresar: 1) piedra, 2) papel, 3) tijera","")
+
+var resultadoPiedr a = (piedra == juego)
+var resultadoPapel = (papel == juego)
+var resultadoTijera = (tijera == juego)
+
+if( (resultadoPiedra == true)){
+    alert("Selecciono Piedra")
+}
+
+if( (resultadoPapel == true)){
+    alert("Selecciono Papel")
+}
+
+if( (resultadoTijera == true)){
+    alert("Selecciono Tijera")
+}
+
+var aleatorio = (1, 3);
+
+var resultadoPiedra2 = (piedra == aleatorio)
+var resultadoPapel2 = (papel == aleatorio)
+var resultadoTijera2 = (tijera == aleatorio)
+
+if( (resultadoPiedra2 == true)){
+    alert("La pc eligio piedra. Perdiste")
+}
+if ( (resultadoPapel2 == true)){
+    alert("La pc eligio papel. Perdiste")
+}
+
+if( (resultadoTijera2 == true)){
+    alert("La pc eligio tijera. Perdiste")
+}
