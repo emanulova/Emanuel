@@ -7,11 +7,8 @@ var pass = prompt("Ingresa su contra","");
 
 var usuarioValido = (usuario == user);
 var passwordValido = (password == pass);
-
-alert("El usuario:" + usuarioValido);
-alert("La contra:" + passwordValido);
-
 var ingresoCorrecto = usuarioValido && passwordValido;
+
 alert("Puede ingresar: " + ingresoCorrecto);
 if (usuarioValido && passwordValido){
     alert("Bienvenido");
