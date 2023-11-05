@@ -1,43 +1,75 @@
-alert("Hola Mundo, quieres ver la pagina? Dale en aceptar"); 
-console.log("Esto se muestra en la consola"); 
-console.log(3+4);
+var piedra = "0"
+var papel = "1"
+var tijera = "2"
 
-var nombre = prompt("Escribir tu nombre","")
-alert("Bienvenido "+ nombre +" a la introduccion a la programacion");
-alert("A continuacion escribi 2 digitos para Sumarlos");
-var numero1 = Number(prompt ("Primer numero ",""));
-var numero2 = Number(prompt ("Segundo numero ",""));
+var juego = prompt("Ingresar: 0) piedra, 1) papel, 2) tijera","")
+
+var resultadoPiedra = (piedra == juego)
+var resultadoPapel = (papel == juego)
+var resultadoTijera = (tijera == juego)
+
+if( (resultadoPiedra == true)){
+    alert("Selecciono Piedra")
+}
+
+if( (resultadoPapel == true)){
+    alert("Selecciono Papel")
+}
+
+if( (resultadoTijera == true)){
+    alert("Selecciono Tijera")
+}
+
+var aleatorio = Math.floor(Math.random() * 3)
 
 
-var Suma = numero1 + numero2
-alert("La suma es: " + Suma);
-var Resta = numero1 - numero2
-alert("La Resta es: " + Resta);
-var Multiplicacion = numero1 * numero2
-alert("La Multiplicacion es: " + Multiplicacion);
-alert("A continuacion escribi 3 digitos para Promediarlo");
-var numero3 = Number(prompt ("Primer numero para Promedio",""));
-var numero4 = Number(prompt ("Segundo numero para Promedio",""))
-var numero5 = Number(prompt ("Tercer numero para Promedio",""))
-var Promedio = (numero3 + numero4 + numero5)/3
-alert("El Promedio es: " + Promedio);
+if (aleatorio == 0){
+    aleatorio = "0"
+        alert("La pc eligio Piedra")
+    } else if (aleatorio == 1){
+    alert("La pc eligio papel")
+    aleatorio = "1"
+}else if (aleatorio == 2){
+    aleatorio = "2"
+    alert("La pc eligio tijera") 
+} 
 
-/* punto 1 de la actividad */
-var nombre = 'Emanuel';
-var edad = 16;
-var altura = 1.73;
-var hijos = false;
+if (
+    (juego == "0" && aleatorio == "2") || 
+    (juego == "2" && aleatorio == "1") ||
+    (juego == "1" && aleatorio == "0")
+) {
+    ganaUsuario();
+} else if (
+    (aleatorio == "0" && juego == "2") || 
+    (aleatorio == "2" && juego == "1") ||
+    (aleatorio == "1" && juego == "0")
+){
+    ganaPC();
+}else if (
+    (aleatorio == "0" && juego == "0") || 
+    (aleatorio == "2" && juego == "2") ||
+    (aleatorio == "1" && juego == "1")
+){
+    empate();
+}else {
+    noSirve();
+}
+    
 
-console.log("Edad " + edad);
-console.log("Nombre " + nombre);
-console.log("Altura " + altura);
-console.log("Hijos " + hijos);
+function ganaUsuario() {
+    alert("Ganaste")
+}
 
-/* falta IMC*/ 
+function ganaPC() {
+    alert("Perdiste")
+}
 
-/* clase del 28/10 
-var edad = parseFloat(prompt("Ingrese la edad",""));
-var puedeEntrar = (edad>=18);
-alert("Puede ingresar? = " + puedeEntrar)
-*/
+function empate() {
+    alert("Empataron")
+}
 
+function noSirve() {
+    alert("Ingrese un numero valido")
+}
+console.log(aleatorio)
